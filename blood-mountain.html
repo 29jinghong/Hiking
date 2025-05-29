@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blood Mountain · Mountain Journey</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -20,7 +19,7 @@
       color: white;
       padding: 3rem 1rem;
       text-align: center;
-      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     header h1 {
@@ -85,15 +84,14 @@
       max-width: 400px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease;
+      transition: transform 0.7s ease;
       cursor: pointer;
     }
 
     .gallery img:hover {
-      transform: scale(1.03);
+      transform: scale(1.4);
     }
 
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -113,6 +111,18 @@
       max-height: 80%;
       border-radius: 8px;
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .close {
@@ -152,22 +162,22 @@
   <div class="photo-section">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="IMG_0167.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0876.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0167.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0160.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0167.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0876.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0167.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0167.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
-      <img src="IMG_0876.JPG" alt="Blood Mountain" onclick="openModal(this.src)">
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Approach trail to Blood Mountain" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Stone shelter at the summit" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Mountain view from the ridge" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Approach trail to Blood Mountain" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Stone shelter at the summit" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Mountain view from the ridge" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Approach trail to Blood Mountain" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Stone shelter at the summit" onclick="openModal(this.src)" />
+      <img src="photos/Hike-1-Blood Mountain-5-2-2025/IMG_0160.JPG" alt="Mountain view from the ridge" onclick="openModal(this.src)" />
     </div>
   </div>
 
   <!-- Modal -->
   <div id="imageModal" class="modal" onclick="closeModal(event)">
     <span class="close" onclick="closeModal(event)">&times;</span>
-    <img class="modal-content" id="modalImage" alt="Enlarged Image">
+    <img class="modal-content" id="modalImage" alt="Enlarged Image" />
   </div>
 
   <nav>
@@ -184,12 +194,13 @@
       const modalImg = document.getElementById("modalImage");
       modal.style.display = "block";
       modalImg.src = src;
+      document.body.style.overflow = "hidden"; // Lock scroll
     }
 
     function closeModal(event) {
-      // Prevent close if clicking the image itself
-      if(event.target.id === 'modalImage') return;
+      if (event.target.id === 'modalImage') return;
       document.getElementById("imageModal").style.display = "none";
+      document.body.style.overflow = ""; // Unlock scroll
     }
   </script>
 </body>

@@ -56,7 +56,7 @@
       height: 480px;
       border: none;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(249, 211, 118, 0.4);
+      box-shadow: 0 0 20px rgba(240, 202, 105, 0.4);
     }
 
     .photo-section {
@@ -84,12 +84,12 @@
       max-width: 400px;
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease;
+      transition: transform 0.7s ease;
       cursor: pointer;
     }
 
     .gallery img:hover {
-      transform: scale(1.03);
+      transform: scale(1.4);
     }
 
     .modal {
@@ -111,6 +111,18 @@
       max-height: 80%;
       border-radius: 8px;
       box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .close {
@@ -150,9 +162,15 @@
   <div class="photo-section">
     <h2>Gallery</h2>
     <div class="gallery">
-      <img src="IMG_0160.JPG" alt="Trail marker at Stone Mountain summit" onclick="openModal(this.src)" />
-      <img src="IMG_0160.JPG" alt="Morning mist rising off the granite path" onclick="openModal(this.src)" />
-      <img src="IMG_0160.JPG" alt="Campfire light reflecting on stone ledges" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Trail marker at Stone Mountain summit" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Morning mist rising off the granite path" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Campfire light reflecting on stone ledges" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Trail marker at Stone Mountain summit" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Morning mist rising off the granite path" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Campfire light reflecting on stone ledges" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Trail marker at Stone Mountain summit" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Morning mist rising off the granite path" onclick="openModal(this.src)" />
+      <img src="photos/Hike-3-Stone Mountain-5-25-2025/IMG_0876.JPG" alt="Campfire light reflecting on stone ledges" onclick="openModal(this.src)" />
     </div>
   </div>
 
@@ -161,10 +179,6 @@
     <span class="close" onclick="closeModal(event)">&times;</span>
     <img class="modal-content" id="modalImage" alt="Enlarged Image" />
   </div>
-
-  <nav>
-    <a href="index.html">← Back to All Mountains</a>
-  </nav>
 
   <footer>
     <p>© 2025 Mountain Journey | Made by Jinghong Wang</p>
@@ -176,11 +190,13 @@
       const modalImg = document.getElementById("modalImage");
       modal.style.display = "block";
       modalImg.src = src;
+      document.body.style.overflow = "hidden"; // lock scroll
     }
 
     function closeModal(event) {
       if (event.target.id === 'modalImage') return;
       document.getElementById("imageModal").style.display = "none";
+      document.body.style.overflow = ""; // unlock scroll
     }
   </script>
 </body>
