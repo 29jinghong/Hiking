@@ -6,16 +6,22 @@
   <title>Mountain Journey · Song of the Hills</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      background: linear-gradient(to bottom, #0f1e2d, #0a0a0a); /* Fix for blue bottom */
+    }
+
+    body {
       font-family: 'Noto Serif SC', serif;
-      background: linear-gradient(to bottom, #0f1e2d, #0a0a0a);
       color: #f0e7dc;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background: radial-gradient(circle at center, #fbd816, #e94f37);
+      background: radial-gradient(circle at center, #c6aa0d, #e66c59);
       color: white;
       padding: 3rem 1rem;
       text-align: center;
@@ -45,15 +51,19 @@
       font-weight: bold;
     }
 
+    main {
+      flex: 1;
+    }
+
     .map-container {
       display: flex;
       justify-content: center;
-      padding: 2rem 1rem;
+      padding: 2rem 2rem;
     }
 
     iframe {
       width: 90%;
-      height: 480px;
+      height: 40rem;
       border: none;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(249, 211, 118, 0.4);
@@ -103,9 +113,9 @@
 
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 1.5rem;
       background-color: #0a0a0a;
-      font-size: 0.9rem;
+      font-size: 0.7rem;
       color: #888;
     }
   </style>
@@ -117,56 +127,19 @@
   </header>
 
   <nav>
-    <a href="#blood-mountain">Blood Mountain</a>
-    <a href="#cloudland-canyon">Cloudland Canyon</a>
-    <a href="#stone-mountain">Stone Mountain</a>
+    <a href="blood-mountain.html">Blood Mountain</a>
+    <a href="cloudland-canyon.html">Cloudland Canyon</a>
+    <a href="stone-mountain.html">Stone Mountain</a>
   </nav>
 
-  <!-- Blood Mountain Block -->
-  <div class="photo-section" id="blood-mountain">
-    <h2>Blood Mountain</h2>
-    <div class="gallery">
-      <img src="IMG_0160.JPG" alt="Stream flowing through rocks at Blood Mountain">
-      <img src="IMG_0160.JPG" alt="Hiking trail winding up Blood Mountain">
-      <img src="IMG_0160.JPG" alt="Viewpoint overlooking the forest from Blood Mountain">
+  <main>
+    <div class="photo-section" id="blood-mountain">
+      <h2>All Trails</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/d/embed?mid=155OUHtde7zXf_vnvi4Rha1gL2FTmWZY&ehbc=2E312F" loading="lazy" title="Hiking Map"></iframe>
+      </div>
     </div>
-    <p>Peaceful views, stone slopes, and mountain breezes.</p>
-  </div>
-
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1rQgUCt3xZRUfpJ0bszArsXHmscp4U8k&ehbc=2E312F" loading="lazy" title="Hiking Map"></iframe>
-  </div>
-
-  <!-- Cloudland Canyon Block -->
-  <div class="photo-section" id="cloudland-canyon">
-    <h2>Cloudland Canyon</h2>
-    <div class="gallery">
-      <img src="IMG_0160.JPG" alt="Entrance sign at Cloudland Canyon trailhead">
-      <img src="IMG_0160.JPG" alt="Foggy path descending into Cloudland Canyon">
-      <img src="IMG_0160.JPG" alt="Warm glow of a campfire under canyon cliffs">
-    </div>
-    <p>Towering cliffs, hidden waterfalls, and sweeping canyon vistas.</p>
-  </div>
-
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1NXmyZW-7oIiSPEBSdnAYIysCjBI5bNQ&ehbc=2E312F" loading="lazy" title="Hiking Map"></iframe>
-  </div>
-  
-  <!-- Stone Mountain Block -->
-  <div class="photo-section" id="stone-mountain">
-    <h2>Stone Mountain</h2>
-    <div class="gallery">
-      <img src="IMG_0160.JPG" alt="Trail marker at Stone Mountain summit">
-      <img src="IMG_0160.JPG" alt="Morning mist rising off the granite path">
-      <img src="IMG_0160.JPG" alt="Campfire light reflecting on stone ledges">
-    </div>
-    <p>Granite domes, historic carvings, and panoramic summit scenes.</p>
-  </div>
-  
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/d/embed?mid=1UaHX-GB87SJiLq5EvpWCFQq3LzCyjb0&ehbc=2E312" loading="lazy" title="Hiking Map"></iframe>
-  </div>
-
+  </main>
 
   <footer>
     <p>© 2025 Mountain Journey | Made by Jinghong Wang</p>
