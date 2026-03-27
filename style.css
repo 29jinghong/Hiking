@@ -1,51 +1,95 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #f5f5f5;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+#map {
+  height: 450px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.trail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.trail-card {
+  display: block;
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.trail-card:hover {
+  transform: translateY(-4px);
+}
+
+.trail-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.trail-card-content {
+  padding: 1rem;
+}
+
+.trail-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.back-link {
+  color: #f9d376;
+  text-decoration: none;
+}
+
+.subtitle {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-  justify-items: center;
-  margin-bottom: 1rem;
 }
 
 .gallery img {
   width: 100%;
-  max-width: 400px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-.gallery img:active {
-  transform: scale(0.98);
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
+  object-fit: cover;
 }
 
 .about-section {
-  background-color: rgba(255, 255, 255, 0.02);
-  color: #eeeeee;
-  text-align: center;
-  padding: 3rem 2rem;
   max-width: 800px;
   margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  text-align: center;
 }
 
-.about-section h2 {
-  font-size: 2rem;
-  color: #f9d376;
-  margin-bottom: 1rem;
-}
-
-.about-section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #aaa;
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trail Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="trail-page">
+    <a class="back-link" href="index.html">← Back to All Mountains</a>
+
+    <div id="trail-content"></div>
+  </main>
+
+  <footer>
+    <p>© 2026 Mountain Journey | Made by Jinghong Wang</p>
+  </footer>
+
+  <script src="data/trails.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    const trail = trails.find(t => t.slug === slug);
+    const container = document.getElementById("trail-content");
+
+    if (!trail) {
+      container.innerHTML = "<h1>Trail not found</h1>";
+    } else {
+      document.title = `${trail.name} · Mountain Journey`;
+
+      container.innerHTML = `
+        <h1>${trail.name}</h1>
+        <p class="subtitle">${trail.shortDescription}</p>
+        <p>${trail.fullDescription}</p>
+
+        <h2>Gallery</h2>
+        <div class="gallery">
+          ${trail.photos.map(photo => `<img src="${photo}" alt="${trail.name} photo">`).join("")}
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
